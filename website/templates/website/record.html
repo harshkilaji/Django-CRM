@@ -1,0 +1,46 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-5">
+    <div class="comic-card comic-form-container mx-auto">
+        <!-- <div class="card-header "> -->
+            <h2 class="card-title">Villain Profile</h2>
+        <!-- </div> -->
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <span class="fw-bold">Name:</span>
+                    <span id="name">{{ rec.name }}</span>
+                </li>
+                <li class="list-group-item">
+                    <span class="fw-bold">Alias:</span>
+                    <span id="alias">{{ rec.alias }}</span>
+                </li>
+                <li class="list-group-item">
+                    <span class="fw-bold">Description:</span>
+                    <p id="description">{{ rec.description }}</p>
+                </li>
+                <li class="list-group-item">
+                    <span class="fw-bold">Power:</span>
+                    <span id="power">{{ rec.powers }}</span>
+                </li>
+                <li class="list-group-item">
+                    <span class="fw-bold">City:</span>
+                    <span id="city">{{ rec.city }}</span>
+                </li>
+                <li class="list-group-item">
+                    <span class="fw-bold">Status:</span>
+                    <span id="status">{{ rec.status }}</span>
+                </li>
+            </ul>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+            <a href="{% url 'home' %}" class="btn">Back</a>
+            <a href="{% url 'update' rec.id %}" class="btn">Update</a>
+            <a href="{% url 'delete' rec.id %}" class="btn">Delete</a>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
